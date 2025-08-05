@@ -1,0 +1,9 @@
+<h1>Список постів</h1>
+<ul>
+    {% for post in object_list %}
+        <li><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></li>
+    {% empty %}
+        <li>Немає постів.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'post-create' %}">+ Новий пост</a>
